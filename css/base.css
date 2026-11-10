@@ -1,0 +1,34 @@
+:root {
+    --color-naranja-claro: #fbba72;
+    --color-naranja: #ca5310;
+    --color-naranja-oscuro: #bb4d00;
+    --color-rojo-terracota: #8f250c;
+    --color-marron-oscuro: #691e06;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body, .navbar{
+    background-color: var(--color-marron-oscuro);
+}
+
+h1, h2, h3, p, a{
+    color: var(--color-naranja-claro);
+}
+
+a{
+    text-decoration: none;
+}
+
+hr {
+    width: 98%;
+    margin: 0 auto;
+    color: var(--color-naranja);
+}
+
+main .container {
+    max-width: 480px;
+}
