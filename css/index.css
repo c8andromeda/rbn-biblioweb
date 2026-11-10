@@ -1,0 +1,29 @@
+
+.barra {
+    background-color: #3a1d12;
+    border-bottom: 1px solid #5a3322;
+}
+
+
+.logo {
+    color: #f2b77a;
+}
+
+.logo i {
+    background-color: #c2550a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+
+.barra .nav-link {
+    color: #e8d5c4;
+}
+
+
+.barra .nav-link.active {
+    background-color: #5a2e1c;
+    color: #f2b77a;
+    border-radius: 6px;
+}
