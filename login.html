@@ -38,7 +38,7 @@
             <h1> Bienvenido de nuevo </h1>
             <p> Introduce tus credenciales para acceder al panel de gestión de Biblioweb </p>
 
-            <form>
+            <form id="login-form">
                 <div class="mb-3">
                     <label for="email">Correo electrónico</label>
                     <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
@@ -55,9 +55,9 @@
                         <small id="emailHelp" class="form-text text-muted">¿Olvidaste tu contraseña?.</small>
                     </div>
                 </div>
-                <button type="button" onclick="autenticarme()" class="btn btn-primary w-100">Iniciar sesión</button>
+                <button type="submit" class="btn btn-primary w-100">Ingresar</button>
             </form>
-
+            <p id="error-message"></p>
             <div class="border mt-5">
                 <p>Acceso exclusivo para personal autorizado. No compartas tus credenciales. </p>
             </div>
