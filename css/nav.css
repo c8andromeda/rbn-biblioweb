@@ -61,7 +61,14 @@ h1, h2, h3 {
 }
 
 
-.texto-barra {
+
+   .texto-barra {
     color: #D9BBA5;
     font-size: 13px;
+    padding-left: 12px;
+}
+
+.barra .nav-link {
+    padding-left: 12px;
+    padding-right: 12px;
 }
