@@ -1,88 +1,8 @@
+/* ===== ESTILOS SOLO DE LA PÁGINA DE INICIO ===== */
 
-.barra {
-    background-color: #3a1d12;
-    border-bottom: 1px solid #5a3322;
-}
-
-
-.logo {
-    color: #f2b77a;
-}
-
-.logo i {
-    background-color: #c2550a;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 6px;
-}
-
-
-.barra .nav-link {
-    color: #e8d5c4;
-}
-
-
-.barra .nav-link.active {
-    background-color: #5a2e1c;
-    color: #f2b77a;
-    border-radius: 6px;
-}
-
-
-.tarjeta {
-    background-color: #4a2618;
-    border: 1px solid #5a3322;
-    border-radius: 12px;
-    padding: 20px;
-    height: 100%;
-}
-
-.tarjeta h3 {
-    font-size: 20px;
-}
-
-.tarjeta i {
-    color: #f2b77a;
-}
-
-.tarjeta p {
-    color: #d9c3b0;
-    font-size: 14px;
-}
-
-
-.tarjeta-clara {
-    background-color: #fdf3e7;
-    color: #3a1d12;
-}
-
-.tarjeta-clara p {
-    color: #6b4a3a;
-}
-
-.tarjeta-clara i {
-    color: #c2550a;
-}
-
-
-.enlace-naranja {
-    color: #f2b77a;
-    text-decoration: none;
-}
-
-
-body {
-    background-color: #3a1d12;
-    color: white;
-    font-family: "Inter", sans-serif;
-}
-
-h1, h2, h3 {
-    font-weight: 400;
-}
-
+/* Portada */
 .portada {
-    background-image: url("../img/portada.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/portada.png");
     background-size: cover;
     background-position: center;
     border-radius: 16px;
@@ -95,7 +15,7 @@ h1, h2, h3 {
 }
 
 .etiqueta {
-    color: #f2b77a;
+    color: #FBBA72;
     font-size: 12px;
     letter-spacing: 2px;
 }
@@ -105,6 +25,69 @@ h1, h2, h3 {
 }
 
 .boton-naranja {
-    background-color: #c2550a;
+    background-color: #CA5310;
     color: white;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background-color: #4A2A1B;
+    border: 1px solid #6B3A1F;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+
+.tarjeta h3 {
+    font-size: 20px;
+}
+
+.tarjeta i {
+    color: #FBBA72;
+}
+
+.tarjeta p {
+    color: #D9BBA5;
+    font-size: 14px;
+}
+
+/* Tarjeta clara (Disponibilidad) */
+.tarjeta-clara {
+    background-color: #FFF5EA;
+    color: #2B150E;
+}
+
+.tarjeta-clara p {
+    color: #6B3A1F;
+}
+
+.tarjeta-clara i {
+    color: #CA5310;
+}
+
+/* Enlace "Explorar el catálogo" */
+.enlace-naranja {
+    color: #FBBA72;
+    text-decoration: none;
+}
+
+/* Horarios y ubicación */
+.info {
+    border-top: 1px solid #6B3A1F;
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.info h4 {
+    font-size: 16px;
+}
+
+.info i {
+    color: #FBBA72;
+}
+
+.info p {
+    color: #D9BBA5;
+    font-size: 14px;
+    margin-bottom: 6px;
 }

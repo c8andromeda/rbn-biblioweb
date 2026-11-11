@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
    
@@ -30,14 +32,18 @@
                 <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
                 <li class="nav-item"><a class="nav-link" href="admin.html">Administrador</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
             </ul>
+            <button id="btnTema" class="btn boton-tema" type="button">
+    <i class="bi bi-moon"></i>
+</button>
         </div>
 
     </div>
 </nav>
      <main class="container">
 
-    <!-- PORTADA -->
+    
     <section class="portada">
         <p class="etiqueta">TU BIBLIOTECA DIGITAL</p>
         <h1>¿Qué leeremos hoy?</h1>
@@ -52,10 +58,13 @@
         </div>
     </section>
 
-    <!-- TARJETAS -->
+    
     <section class="mt-5">
         <p class="etiqueta">ABRE UN MUNDO DE HISTORIAS</p>
-        <h2>Tu próximo capítulo empieza aquí.</h2>
+        <div class="d-flex justify-content-between align-items-end">
+    <h2>Tu próximo capítulo empieza aquí.</h2>
+    <a href="catalogo.html" class="enlace-naranja">Explorar el catálogo <i class="bi bi-arrow-right"></i></a>
+</div>
 
         <div class="row mt-4">
             <div class="col-md-4 mb-3">
@@ -80,13 +89,40 @@
             </div>
         </div>
 
-        <a href="catalogo.html" class="enlace-naranja">Explorar el catálogo <i class="bi bi-arrow-right"></i></a>
+       
     </section>
 
     
 </section>
 
+
+<section class="info row">
+
+    <div class="col-md-6 mb-3">
+        <h4><i class="bi bi-clock"></i> Horarios</h4>
+        <p>Lunes a viernes: 8:00 a.m. - 6:00 p.m.</p>
+        <p>Sábado: 9:00 a.m. - 1:00 p.m.</p>
+        <p>Domingo: Cerrado</p>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <h4><i class="bi bi-geo-alt"></i> Ubicación</h4>
+        <p>Pasaje de los lectores #12, Medellín</p>
+    </div>
+
+</section>
+
 </main>
+<footer class="pie">
+    <div class="container d-flex justify-content-between align-items-center">
+        <span class="logo">biblioweb</span>
+        <span>© 2026 Biblioweb</span>
+        <div>
+            <a href="#">Política de privacidad</a>
+            <a href="#" class="ms-3">Centro de ayuda</a>
+        </div>
+    </div>
+</footer>
 
     <script>
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
