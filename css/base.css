@@ -1,9 +1,13 @@
 :root {
-    --color-naranja-claro: #fbba72;
-    --color-naranja: #ca5310;
-    --color-naranja-oscuro: #bb4d00;
-    --color-rojo-terracota: #8f250c;
-    --color-marron-oscuro: #691e06;
+    --color-naranja-claro: #FFBA72;
+    --color-crema: #FFF7EC;
+    --color-beige: #D9BBA5;
+    --color-marron-oscuro: #3A1D12;
+    --color-marron: #6B3A1F;
+    --color-marron-profundo: #4A2A1B;
+    --color-marron-claro: #725341;
+    --color-naranja-oscuro: #BB4D00;
+    --color-crema-oscuro: #F6EBDD;
 }
 
 * {
@@ -16,25 +20,80 @@ body.modo-oscuro .navbar {
     background-color: var(--color-marron-oscuro);
 }
 
+body.modo-claro,
+body.modo-claro .navbar {
+    background-color: var(--color-crema);
+}
+
 body.modo-oscuro h1,
 body.modo-oscuro h2,
 body.modo-oscuro h3,
 body.modo-oscuro p,
-body.modo-oscuro a {
+body.modo-oscuro a,
+body.modo-oscuro label,
+body.modo-oscuro span,
+body.modo-oscuro hr {
     color: var(--color-naranja-claro);
-}
-
-body.modo-claro,
-body.modo-claro .navbar {
-    background-color: var(--color-crema);
 }
 
 body.modo-claro h1,
 body.modo-claro h2,
 body.modo-claro h3,
 body.modo-claro p,
-body.modo-claro a {
-    color: var(--color-naranja);
+body.modo-claro a,
+body.modo-claro hr {
+    color: var(--color-naranja-oscuro);
+}
+
+body.modo-claro .btn {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-oscuro .btn{
+    color: white;
+}
+
+body.modo-oscuro .container{
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid var(--color-beige);
+}
+
+body.modo-oscuro .autorizado{
+     border-radius: 10px;
+    padding: 15px;
+    border: 2px solid var(--color-marron-claro);
+}
+
+body.modo-claro .container{
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid var(--color-naranja-oscuro);
+}
+
+body.modo-claro .autorizado{
+     border-radius: 10px;
+    padding: 15px;
+    border: 2px solid var(--color-naranja-claro);
+}
+
+body.modo-claro .form-control{
+    background-color: var(--color-crema-oscuro);
+    border: 1px solid var(--color-naranja-oscuro);
+}
+
+body.modo-oscuro .form-control{
+    background-color: var(--color-marron);
+    border: 1px solid var(--color-marron-oscuro);
+}
+
+body.modo-oscuro .form-control::placeholder{
+    color: var(--color-crema-oscuro);
+}
+
+
+#emailHelp {
+    color: var(--color-naranja-claro);
 }
 
 a {
@@ -44,9 +103,15 @@ a {
 hr {
     width: 98%;
     margin: 0 auto;
-    color: var(--color-naranja);
+    opacity: 1;
 }
 
 main .container {
     max-width: 480px;
 }
+
+.btn{
+        background-color: var(--color-naranja-oscuro);
+}
+
+
