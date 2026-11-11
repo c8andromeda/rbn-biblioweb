@@ -6,20 +6,38 @@
     --color-marron-oscuro: #691e06;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-body, .navbar{
+body.modo-oscuro,
+body.modo-oscuro .navbar {
     background-color: var(--color-marron-oscuro);
 }
 
-h1, h2, h3, p, a{
+body.modo-oscuro h1,
+body.modo-oscuro h2,
+body.modo-oscuro h3,
+body.modo-oscuro p,
+body.modo-oscuro a {
     color: var(--color-naranja-claro);
 }
 
-a{
+body.modo-claro,
+body.modo-claro .navbar {
+    background-color: var(--color-crema);
+}
+
+body.modo-claro h1,
+body.modo-claro h2,
+body.modo-claro h3,
+body.modo-claro p,
+body.modo-claro a {
+    color: var(--color-naranja);
+}
+
+a {
     text-decoration: none;
 }
 
