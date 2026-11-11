@@ -13,7 +13,7 @@
 </head>
    
 <body>
-    <nav class="navbar navbar-expand-lg barra">
+    <nav class="navbar navbar-expand-lg barra" data-bs-theme="dark">
     <div class="container">
 
         
@@ -62,9 +62,9 @@
     
     <section class="mt-5">
         <p class="etiqueta">ABRE UN MUNDO DE HISTORIAS</p>
-        <div class="d-flex justify-content-between align-items-end">
+     <div class="d-flex justify-content-between align-items-end">
     <h2>Tu próximo capítulo empieza aquí.</h2>
-    <a href="catalogo.html" class="enlace-naranja">Explorar el catálogo <i class="bi bi-arrow-right"></i></a>
+    <a href="catalogo.html" class="enlace-naranja d-none d-md-inline">Explorar el catálogo <i class="bi bi-arrow-right"></i></a>
 </div>
 
         <div class="row mt-4">
@@ -89,8 +89,10 @@
                 </div>
             </div>
         </div>
+        <p class="text-center mt-3 d-md-none">
+    <a href="catalogo.html" class="enlace-naranja">Explorar el catálogo <i class="bi bi-arrow-right"></i></a>
+</p> 
 
-       
     </section>
 
     
@@ -115,7 +117,7 @@
 
 </main>
 <footer class="pie">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2">
         <span class="logo">biblioweb</span>
         <span>© 2026 Biblioweb</span>
         <div>
