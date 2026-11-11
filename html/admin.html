@@ -1,217 +1,294 @@
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Biblioweb - Administración</title>
+
+    <!-- Fuente Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS propio -->
     <link rel="stylesheet" href="../css/admin.css">
 </head>
-<header>
-    <div class="container">
-        <div class="col-12">
-            <div class="row navi d-flex align-items-center justify-content-between">
-                <div class="col-4 d-flex align-items-center">
-                    <img src="../img/logo-transparente-512.png" class="img" alt="">
-                    <h1 class="fw-bold fs-4 mt-2 mx-2">Biblioweb</h1>
-                </div>
-                <div class=" col-1 icon d-flex align-items-center justify-content-center">
-                    <img class="" src="../img/usuario.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
 <body>
-    <section class="info">
-        <div class="container">
-            <div class="row in">
-                <p class="mt-3 gs">GESTIÓN DEL CATÁLOGO</p>
-                <h2 class="fs-1 text-white">Panel de administración</h2>
-                <p>Agrega libros y mantén tu biblioteca al día</p>
-            </div>
-        </div>
 
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-12">
-                    <form class="form-control">
-                        <div class="row">
-                            <div class="col-12">
-                                <h2>Agregar un nuevo libro</h2>
-                                <p>Completa los campos para agregar un nuevo libro a tu biblioteca.</p>
-                            </div>
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label for="titulo" class="form-label">Título</label>
-                                    <input type="text" class="form-control" id="titulo"
-                                        placeholder="Ingrese el título del libro">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="autor" class="form-label">Autor</label>
-                                    <input type="text" class="form-control" id="autor"
-                                        placeholder="Ingrese el nombre del autor">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="descripcion" class="form-label">Descripción</label>
-                                    <textarea class="form-control" id="descripcion" rows="3"
-                                        placeholder="Ingrese una breve descripción del libro"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="portada" class="form-label">Portada</label>
-                                    <input class="form-control" type="file" id="portada">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="categoria" class="form-label">Categoría</label>
-                                    <select class="form-select" id="categoria">
-                                        <option selected>Seleccione una categoría</option>
-                                        <option value="1">Ficción</option>
-                                        <option value="2">No Ficción</option>
-                                        <option value="3">Ciencia</option>
-                                        <option value="4">Historia</option>
-                                        <option value="5">Biografía</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="fecha" class="form-label">Fecha de publicación</label>
-                                    <input type="date" class="form-control" id="fecha">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="precio" class="form-label">Precio</label>
-                                    <input type="number" class="form-control" id="precio"
-                                        placeholder="Ingrese el precio del libro">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Agregar libro</button>
-                            </div>
-                        </div>
-                    </form>
+    <!-- HEADER -->
+    <header>
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="row navi d-flex align-items-center justify-content-between">
+
+                    <div class="col-4 d-flex align-items-center">
+                        <img src="../img/logo-transparente-512.png" class="img" alt="Logo Biblioweb">
+                        <h1 class="fs-4 mt-2 mx-2">Biblioweb</h1>
+                    </div>
+
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <img src="../img/usuario.png" alt="Usuario">
+                    </div>
+
                 </div>
             </div>
         </div>
-    </section>
-    <section>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-12">
-                    <h2>
-                        Libros en venta
-                    </h2>
-                    <p>Consulta, edita o elimina los libros del catálogo</p>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="col-12 d-md-flex justify-content-center align-items-center">
+
+        <!-- INFORMACIÓN Y FORMULARIO -->
+        <section class="info col-md-3">
+
+            <div class="container">
+                <div class="row in">
+
+                    <p class="mt-3 gs">GESTIÓN DEL CATÁLOGO</p>
+
+                    <h2 class="fs-1 text-white">Panel de administración</h2>
+
+                    <p class="add-books">
+                        Agrega libros y mantén tu biblioteca al día
+                    </p>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 mt-5">
-                    <div class="table-responsive">
-                        <table class="table table-striped ">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Portada (URL)</th>
-                                    <th scope="col">Título</th>
-                                    <th scope="col">Autor</th>
-                                    <th scope="col">Categoría</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">https://biblioweb.es/sombra.jpg</th>
-                                    <th>
-                                        <p>La sompra del viento</p>
-                                    </th>
-                                    <th>Carlos Ruz Zafón</th>
-                                    <th>Novela</th>
-                                    <th>
-                                        <div class="accion">
-                                            <button class="btn btn-primary edit">Editar</button>
-                                            <button class="btn btn-danger delete">Eliminar</button>
-                                        </div>
-                                    </th>
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">https://biblioweb.es/portada2.jpg</th>
-                                    <th>
-                                        <p>El principito</p>
-                                    </th>
-                                    <th>Antoine de Saint-Exupéry</th>
-                                    <th>Ficción</th>
-                                    <th>
-                                        <div class="accion">
-                                            <button class="btn btn-primary edit">Editar</button>
-                                            <button class="btn btn-danger delete">Eliminar</button>
-                                        </div>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="row">https://biblioweb.es/portada3.jpg</th>
-                                    <th>
-                                        <p>1984</p>
-                                    </th>
-                                    <th>George Orwell</th>
-                                    <th>Ciencia ficción</th>
-                                    <th>
-                                        <div class="accion">
-                                            <button class="btn btn-primary edit">Editar</button>
-                                            <button class="btn btn-danger delete">Eliminar</button>
-                                        </div>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="row">https://biblioweb.es/portada4.jpg</th>
-                                    <th>
-                                        <p>El gran Gatsby</p>
-                                    </th>
-                                    <th>F. Scott Fitzgerald</th>
-                                    <th>Novela</th>
-                                    <th>
-                                        <div class="accion">
-                                            <button class="btn btn-primary edit">Editar</button>
-                                            <button class="btn btn-danger delete">Eliminar</button>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
+            <!-- FORMULARIO -->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-12">
+
+                        <form class="form-control">
+
+                            <div class="row">
+
+                                <div class="col-12 form-info">
+                                    <h2>Agregar un nuevo libro</h2>
+                                    <p>
+                                        Completa los campos para agregar un nuevo libro a tu biblioteca.
+                                    </p>
+                                </div>
+
+                                <div class="col-12">
+
+                                    <div class="mb-3">
+                                        <label for="titulo" class="form-label">Título</label>
+                                        <input type="text" class="form-control" id="titulo"
+                                            placeholder="Ingrese el título del libro">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="autor" class="form-label">Autor</label>
+                                        <input type="text" class="form-control" id="autor"
+                                            placeholder="Ingrese el nombre del autor">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="descripcion" class="form-label">Descripción</label>
+                                        <textarea class="form-control" id="descripcion" rows="3"
+                                            placeholder="Ingrese una breve descripción del libro"></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="portada" class="form-label">Portada</label>
+                                        <input class="form-control" type="file" id="portada">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="categoria" class="form-label">Categoría</label>
+                                        <select class="form-select" id="categoria">
+                                            <option selected disabled>Seleccione una categoría</option>
+                                            <option value="1">Ficción</option>
+                                            <option value="2">No Ficción</option>
+                                            <option value="3">Ciencia</option>
+                                            <option value="4">Historia</option>
+                                            <option value="5">Biografía</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="fecha" class="form-label">Fecha de publicación</label>
+                                        <input type="date" class="form-control" id="fecha">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="precio" class="form-label">Precio</label>
+                                        <input type="number" class="form-control" id="precio"
+                                            placeholder="Ingrese el precio del libro">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-form">
+                                        Agregar libro
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </form>
+
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <button class="btn btn-info">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-arrow-left" viewBox="0 0 16 16">
+
+        </section>
+
+        <!-- TABLA DE LIBROS -->
+        <section class="catalogo">
+
+            <div class="container mt-5">
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <h2 class="lb">Libros en venta</h2>
+
+                        <p class="lb-2">Consulta, edita o elimina los libros del catálogo</p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 mt-2">
+
+                        <div class="table-responsive">
+
+                            <table class="table table-striped">
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Portada (URL)</th>
+                                        <th scope="col">Título</th>
+                                        <th scope="col">Autor</th>
+                                        <th scope="col">Categoría</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td class="enlace">https://biblioweb.es/sombra.jpg</td>
+                                        <td>La sombra del viento</td>
+                                        <td>Carlos Ruiz Zafón</td>
+                                        <td>Novela</td>
+                                        <td>
+                                            <div class="accion">
+                                                <button class="btn btn-primary edit">Editar</button>
+                                                <button class="btn btn-danger delete">Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="enlace">https://biblioweb.es/portada2.jpg</td>
+                                        <td>El principito</td>
+                                        <td>Antoine de Saint-Exupéry</td>
+                                        <td>Ficción</td>
+                                        <td>
+                                            <div class="accion">
+                                                <button class="btn btn-primary edit">Editar</button>
+                                                <button class="btn btn-danger delete">Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="enlace">https://biblioweb.es/portada3.jpg</td>
+                                        <td>1984</td>
+                                        <td>George Orwell</td>
+                                        <td>Ciencia ficción</td>
+                                        <td>
+                                            <div class="accion">
+                                                <button class="btn btn-primary edit">Editar</button>
+                                                <button class="btn btn-danger delete">Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="enlace">https://biblioweb.es/portada4.jpg</td>
+                                        <td>El gran Gatsby</td>
+                                        <td>F. Scott Fitzgerald</td>
+                                        <td>Novela</td>
+                                        <td>
+                                            <div class="accion">
+                                                <button class="btn btn-primary edit">Editar</button>
+                                                <button class="btn btn-danger delete">Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- BOTÓN VOLVER -->
+                <div class="row">
+                    <div class="col-12">
+
+                        <a href="../html/catalogo.html" class="btn btn-info ">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+
                                 <path fill-rule="evenodd"
                                     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+
                             </svg>
-                        </span>
-                        Volver al catálogo
-                    </button>
+
+                            Volver al catálogo
+
+                        </a>
+
+                    </div>
                 </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-4">
+
+        <div class="container mt-2">
+            <div class="row">
+
+                <div class="col-12 d-flex justify-content-between align-items-center">
+
+                    <h2>
+                        <span>
+                            <img src="../img/logo-transparente-512.png" class="img" alt="">
+                        </span>
+                        biblioweb
+                    </h2>
+
+                    <p>&copy; 2026 Biblioweb.</p>
+
+                </div>
+
             </div>
         </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-<footer class="mt-4">
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-between">
-                <h2>biblioweb</h2>
-                <p class="">&copy; 2026 Biblioweb.</p>
-            </div>
-        </div>
-
-    </div>
-</footer>
-
 </html>
