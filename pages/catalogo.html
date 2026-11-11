@@ -21,7 +21,7 @@
     <script src="https://kit.fontawesome.com/8bd5e3e88c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-chocolateProfundo px-15">
+<body class="bg-chocolateProfundo lg:px-15">
 
     <header class="border-b border-chocolate">
         <nav class="bg-chocolateProfundo text-duraznoFont">
@@ -59,13 +59,13 @@
                             <li><a href="#">Catálogo</a></li>
                             <li><a href="#">Administrador</a></li>
                         </ul>
-
+                        <!-- 
                         <div class="relative mt-5">
                             <input type="text" class="bg-durazno rounded-lg h-10 w-full pr-10 pl-3"
                                 placeholder="Título, autor o tema">
                             <i
                                 class="fa-solid fa-magnifying-glass bg-cobre text-xl p-1 rounded-lg absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-                        </div>
+                        </div> -->
 
                         <hr class="border-chocolate my-5">
 
@@ -95,7 +95,7 @@
     <main>
         <div class="flex justify-between py-5 items-center text-durazno">
             <div class="flex gap-10 items-center">
-                <h2 class="text-4xl">Catálogo</h2>
+                <h2 class="text-2xl lg:text-4xl">Catálogo</h2>
                 <p>Encuentra tu proxima lectura.</p>
             </div>
             <button class="text-duraznoFont border-2 rounded-3xl p-2"><i class="fa-solid fa-book-open"></i>Biblioteca
@@ -114,30 +114,30 @@
                             class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
             </div>
-            <div class="grid grid-cols-6 grid-x-1">
-                <div class="flex items-center col-span-3">
+            <div class="lg:grid lg:grid-cols-6 lg:grid-x-1">
+                <div class="flex items-center col-span-3 gap-4">
                     <div>
                         <img src="../img/sombraViento.png" alt="">
                     </div>
                     <div class="flex flex-col gap-4">
                         <p class="text-cobre">Novela · Misterio</p>
-                        <h2 class="text-4xl text-chocolateProfundo">La sombra del viento</h2>
+                        <h2 class="text-xl lg:text-4xl text-chocolateProfundo">La sombra del viento</h2>
                         <p class="text-chocolate">Carlos Ruiz Zafón</p>
                         <p class="text-chocolate">Un libro olvidado. Un secreto entre las calles de Barcelona</p>
                         <a href="" class="text-xl text-cobre">Ver libro <i class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="hidden lg:flex lg:flex-col lg:items-center">
                     <img src="../img/rayuela.png" alt="">
                     <h2>Rayuela</h2>
                     <p>Julio Cortázar</p>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="hidden lg:flex lg:flex-col lg:items-centerr">
                     <img src="../img/pedroParamo_223x304.png" alt="" class="h-[19rem]">
                     <h2>Pedro Páramo</h2>
                     <p>Julio Rulfo</p>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="hidden lg:flex lg:flex-col lg:items-center">
                     <img src="../img/casaEspiritus.jpeg" alt="" class="h-[19rem]">
                     <h2>La casa de los espíritus</h2>
                     <p>Isabel Allende</p>
@@ -154,7 +154,7 @@
             </div>
             <a href="" class="text-duraznoFont text-lg">Ver todos <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div class="grid grid-cols-6 grid-x-1">
+        <div class="grid grid-cols-2 grid-x-3 lg:grid-cols-6 lg:grid-x-1">
             <div class="flex flex-col items-center justify-center gap-4">
                 <img src="../img/cienAños.png" alt="">
                 <h2 class="text-xl text-durazno">Cien años de soledad</h2>
@@ -219,7 +219,7 @@
             </div>
             <a href="" class="text-duraznoFont text-lg">Ver todos <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div class="grid grid-cols-6 grid-x-1">
+        <div class="grid grid-cols-2 grid-x-3 lg:grid-cols-6 lg:grid-x-1">
             <div class="flex flex-col items-center justify-center gap-4">
                 <img src="../img/laVegetariana.png" alt="">
                 <h2 class="text-xl text-durazno">La Vegetariana</h2>
@@ -276,8 +276,13 @@
         </div>
     </section>
 
-    <footer>
-
+    <footer class="flex justify-between text-duraznoFont border-t border-chocolate py-10 mt-10 items-center w-[100%]">
+        <p class="text-lg lg:text-2xl">biblioWeb</p>
+        <p class="sm:text-sm">&copy; 2026 biblioWeb</p>
+        <div class="sm:text-sm flex flex-col lg:flex gap-10">
+            <p class="">Política de privacidad</p>
+            <p>Centro de ayuda</p>
+        </div>
     </footer>
 
 </body>
