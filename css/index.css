@@ -1,0 +1,93 @@
+/* ===== ESTILOS SOLO DE LA PÁGINA DE INICIO ===== */
+
+/* Portada */
+.portada {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/portada.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 60px 40px;
+    margin-top: 30px;
+}
+
+.portada h1 {
+    font-size: 48px;
+}
+
+.etiqueta {
+    color: #FBBA72;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.buscador {
+    max-width: 320px;
+}
+
+.boton-naranja {
+    background-color: #CA5310;
+    color: white;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background-color: #4A2A1B;
+    border: 1px solid #6B3A1F;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+
+.tarjeta h3 {
+    font-size: 20px;
+}
+
+.tarjeta i {
+    color: #FBBA72;
+}
+
+.tarjeta p {
+    color: #D9BBA5;
+    font-size: 14px;
+}
+
+/* Tarjeta clara (Disponibilidad) */
+.tarjeta-clara {
+    background-color: #FFF5EA;
+    color: #2B150E;
+}
+
+.tarjeta-clara p {
+    color: #6B3A1F;
+}
+
+.tarjeta-clara i {
+    color: #CA5310;
+}
+
+/* Enlace "Explorar el catálogo" */
+.enlace-naranja {
+    color: #FBBA72;
+    text-decoration: none;
+}
+
+/* Horarios y ubicación */
+.info {
+    border-top: 1px solid #6B3A1F;
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.info h4 {
+    font-size: 16px;
+}
+
+.info i {
+    color: #FBBA72;
+}
+
+.info p {
+    color: #D9BBA5;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
