@@ -93,54 +93,370 @@
     </header>
 
     <main>
-        <div class="flex justify-between py-5 items-center text-durazno">
+        <div class="flex flex-col gap-7 lg:flex lg:flex-row justify-between py-5 items-center text-durazno">
             <div class="flex gap-10 items-center">
                 <h2 class="text-2xl lg:text-4xl">Catálogo</h2>
                 <p>Encuentra tu proxima lectura.</p>
             </div>
-            <button class="text-duraznoFont border-2 rounded-3xl p-2"><i class="fa-solid fa-book-open"></i>Biblioteca
-                digital</button>
-        </div>
-        <div class="bg-durazno p-13 flex flex-col gap-5">
-            <div class="flex justify-between">
-                <div>
-                    <p class="text-cobre">Seleccion BiblioWeb</p>
-                    <h2 class="text-2xl text-chocolateProfundo">Destacados de la semana</h2>
-                </div>
-                <div class="text-3xl">
-                    <button class="border-1 border-chocolateProfundo rounded-[100%] size-12 hover:bg-duraznoFont"><i
-                            class="fa-solid fa-arrow-left-long"></i></button>
-                    <button class="border-1 border-chocolateProfundo rounded-[100%] size-12 hover:bg-duraznoFont"><i
-                            class="fa-solid fa-arrow-right-long"></i></button>
+            <input type="checkbox" id="modal-prestamo" class="peer hidden" />
+
+            <label for="modal-prestamo"
+                class="text-duraznoFont border-2 rounded-3xl p-2 text-xl flex gap-1 items-center cursor-pointer">
+                <i class="fa-solid fa-book-open"></i>Alquilar libros
+            </label>
+
+            <div
+                class="pointer-events-none fixed inset-0 z-[999] grid place-items-center p-4 opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-100">
+
+                <label for="modal-prestamo"
+                    class="absolute inset-0 cursor-pointer bg-black/60 backdrop-blur-sm"></label>
+
+                <div
+                    class="relative flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-[#fff8ee] shadow-2xl">
+
+                    <div class="relative bg-[#2b1810] px-6 py-5 text-[#fff8ee]">
+                        <p class="text-[10px] font-semibold uppercase tracking-widest text-[#c2511b]">Biblioweb</p>
+                        <h3 class="mt-1 text-2xl font-serif">Solicitar préstamo de libro</h3>
+                        <p class="mt-1 text-sm text-[#fff8ee]/70">Completa tus datos para reservar tu lectura.</p>
+
+                        <label for="modal-prestamo"
+                            class="absolute right-4 top-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-[#fff8ee]/30 text-lg leading-none hover:bg-[#fff8ee]/10"
+                            aria-label="Cerrar">&times;</label>
+                    </div>
+
+                    <form class="flex flex-col gap-4 overflow-y-auto p-6 text-[#2b1810]">
+
+                        <div>
+                            <label for="libro" class="mb-1 block text-sm font-medium">¿Qué libro quieres?</label>
+                            <select id="libro"
+                                class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm focus:border-[#c2511b] focus:outline-none">
+                                <option value="" disabled selected>Selecciona un libro</option>
+                                <optgroup label="Los más pedidos">
+                                    <option>Cien años de soledad — Gabriel García Márquez</option>
+                                    <option>El principito — Antoine de Saint-Exupéry</option>
+                                    <option>1984 — George Orwell</option>
+                                    <option>Orgullo y prejuicio — Jane Austen</option>
+                                    <option>Don Quijote de la Mancha — Miguel de Cervantes</option>
+                                    <option>Rayuela — Julio Cortázar</option>
+                                </optgroup>
+                                <optgroup label="Destacados de la semana">
+                                    <option>La sombra del viento — Carlos Ruiz Zafón</option>
+                                    <option>Pedro Páramo — Juan Rulfo</option>
+                                    <option>La casa de los espíritus — Isabel Allende</option>
+                                </optgroup>
+                                <optgroup label="Lo más nuevo">
+                                    <option>La vegetariana — Han Kang</option>
+                                    <option>El infinito en un junco — Irene Vallejo</option>
+                                    <option>Nada — Carmen Laforet</option>
+                                    <option>Los abismos — Pilar Quintana</option>
+                                    <option>Un cuarto propio — Virginia Woolf</option>
+                                    <option>La ridícula idea de no volver a verte — Rosa Montero</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="nombre" class="mb-1 block text-sm font-medium">Nombre completo</label>
+                            <input id="nombre" type="text" placeholder="Tu nombre y apellidos"
+                                class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm placeholder:text-[#2b1810]/40 focus:border-[#c2511b] focus:outline-none" />
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="col-span-1">
+                                <label for="tipo-doc" class="mb-1 block text-sm font-medium">Tipo</label>
+                                <select id="tipo-doc"
+                                    class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm focus:border-[#c2511b] focus:outline-none">
+                                    <option>CC</option>
+                                    <option>TI</option>
+                                    <option>CE</option>
+                                    <option>Pasaporte</option>
+                                </select>
+                            </div>
+                            <div class="col-span-2">
+                                <label for="documento" class="mb-1 block text-sm font-medium">N.º de
+                                    identificación</label>
+                                <input id="documento" type="text" inputmode="numeric" placeholder="1234567890"
+                                    class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm placeholder:text-[#2b1810]/40 focus:border-[#c2511b] focus:outline-none" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                            <div>
+                                <label for="correo" class="mb-1 block text-sm font-medium">Correo electrónico</label>
+                                <input id="correo" type="email" placeholder="tu@correo.com"
+                                    class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm placeholder:text-[#2b1810]/40 focus:border-[#c2511b] focus:outline-none" />
+                            </div>
+                            <div>
+                                <label for="telefono" class="mb-1 block text-sm font-medium">Teléfono</label>
+                                <input id="telefono" type="tel" placeholder="300 123 4567"
+                                    class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm placeholder:text-[#2b1810]/40 focus:border-[#c2511b] focus:outline-none" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                            <div>
+                                <label for="fecha-retiro" class="mb-1 block text-sm font-medium">Fecha de retiro</label>
+                                <input id="fecha-retiro" type="date"
+                                    class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm focus:border-[#c2511b] focus:outline-none" />
+                            </div>
+                            <div>
+                                <label for="duracion" class="mb-1 block text-sm font-medium">Duración del
+                                    préstamo</label>
+                                <select id="duracion"
+                                    class="w-full rounded-md border border-[#2b1810]/20 bg-white px-3 py-2 text-sm focus:border-[#c2511b] focus:outline-none">
+                                    <option>7 días</option>
+                                    <option>14 días</option>
+                                    <option>21 días</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label class="flex items-start gap-2 text-sm text-[#2b1810]/80">
+                            <input type="checkbox" class="mt-0.5 h-4 w-4 accent-[#c2511b]" />
+                            Me comprometo a devolver el libro en la fecha acordada y a cuidarlo.
+                        </label>
+
+                        <div class="flex gap-3 pt-2">
+                            <label for="modal-prestamo"
+                                class="flex-1 cursor-pointer rounded-md border border-[#2b1810]/30 px-4 py-2 text-center text-sm hover:bg-[#2b1810]/5">
+                                Cancelar
+                            </label>
+                            <button type="button"
+                                class="flex-1 rounded-md bg-[#c2511b] px-4 py-2 text-sm font-medium text-white shadow-md transition hover:bg-[#a84415]">
+                                Solicitar préstamo
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="lg:grid lg:grid-cols-6 lg:grid-x-1">
-                <div class="flex items-center col-span-3 gap-4">
-                    <div>
-                        <img src="../img/sombraViento.png" alt="">
+
+            <div class="lg:hidden items-center relative">
+                <input type="text" class="bg-durazno rounded-lg h-[2.5rem] pr-10 w-64 pl-4 text-duraznoFont"
+                    placeholder="Título, autor o tema">
+                <i
+                    class="fa-solid fa-magnifying-glass bg-cobre text-2xl p-1 rounded-lg absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+        </div>
+        <div class="group relative flex flex-col gap-5 px-6 pb-8 pt-2 lg:bg-durazno lg:p-13">
+
+            <input type="radio" name="carrusel" id="s1" class="sr-only" aria-label="Mostrar La sombra del viento"
+                checked>
+            <input type="radio" name="carrusel" id="s2" class="sr-only" aria-label="Mostrar Rayuela">
+            <input type="radio" name="carrusel" id="s3" class="sr-only" aria-label="Mostrar Pedro Páramo">
+            <input type="radio" name="carrusel" id="s4" class="sr-only" aria-label="Mostrar La casa de los espíritus">
+
+            <div>
+                <p
+                    class="text-xs uppercase tracking-wider text-duraznoFont lg:text-base lg:normal-case lg:tracking-normal lg:text-cobre">
+                    Selección BiblioWeb</p>
+                <h2 class="text-2xl text-durazno lg:text-chocolateProfundo">Destacados de la semana</h2>
+            </div>
+
+            <div class="flex flex-col gap-5 rounded-2xl bg-durazno p-5 lg:rounded-none lg:bg-transparent lg:p-0">
+
+                <div class="grid">
+
+                    <div
+                        class="col-start-1 row-start-1 opacity-0 invisible transition-opacity duration-500 group-has-[#s1:checked]:opacity-100 group-has-[#s1:checked]:visible lg:grid lg:grid-cols-6 lg:gap-x-1">
+                        <div class="flex items-center col-span-3 gap-4">
+                            <img src="../img/sombraViento.png" alt="Portada de La sombra del viento"
+                                class="h-[11.5rem] w-[7.5rem] shrink-0 object-cover shadow-xl lg:h-[22rem] lg:w-[15rem]">
+                            <div class="flex flex-col gap-2 lg:gap-4">
+                                <p class="text-xs uppercase text-cobre lg:text-base lg:normal-case">Novela · Misterio
+                                </p>
+                                <h2 class="text-xl lg:text-4xl text-chocolateProfundo">La sombra del viento</h2>
+                                <p class="text-sm text-chocolate lg:text-base">Carlos Ruiz Zafón</p>
+                                <p class="text-sm text-chocolate lg:text-base">Un libro olvidado. Un secreto entre las
+                                    calles de Barcelona</p>
+                                <a href="" class="text-base text-cobre lg:text-xl">Ver libro <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/rayuela.png" alt="Portada de Rayuela"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>Rayuela</h2>
+                            <p>Julio Cortázar</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/pedroParamo_223x304.png" alt="Portada de Pedro Páramo"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>Pedro Páramo</h2>
+                            <p>Juan Rulfo</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/casaEspiritus.jpeg" alt="Portada de La casa de los espíritus"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>La casa de los espíritus</h2>
+                            <p>Isabel Allende</p>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <p class="text-cobre">Novela · Misterio</p>
-                        <h2 class="text-xl lg:text-4xl text-chocolateProfundo">La sombra del viento</h2>
-                        <p class="text-chocolate">Carlos Ruiz Zafón</p>
-                        <p class="text-chocolate">Un libro olvidado. Un secreto entre las calles de Barcelona</p>
-                        <a href="" class="text-xl text-cobre">Ver libro <i class="fa-solid fa-arrow-right-long"></i></a>
+
+                    <div
+                        class="col-start-1 row-start-1 opacity-0 invisible transition-opacity duration-500 group-has-[#s2:checked]:opacity-100 group-has-[#s2:checked]:visible lg:grid lg:grid-cols-6 lg:gap-x-1">
+                        <div class="flex items-center col-span-3 gap-4">
+                            <img src="../img/rayuela.png" alt="Portada de Rayuela"
+                                class="h-[11.5rem] w-[7.5rem] shrink-0 object-cover shadow-xl lg:h-[22rem] lg:w-[15rem]">
+                            <div class="flex flex-col gap-2 lg:gap-4">
+                                <p class="text-xs uppercase text-cobre lg:text-base lg:normal-case">Novela ·
+                                    Experimental</p>
+                                <h2 class="text-xl lg:text-4xl text-chocolateProfundo">Rayuela</h2>
+                                <p class="text-sm text-chocolate lg:text-base">Julio Cortázar</p>
+                                <p class="text-sm text-chocolate lg:text-base">Una novela que se puede leer en más de un
+                                    orden, entre París y Buenos Aires</p>
+                                <a href="" class="text-base text-cobre lg:text-xl">Ver libro <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/pedroParamo_223x304.png" alt="Portada de Pedro Páramo"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>Pedro Páramo</h2>
+                            <p>Juan Rulfo</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/casaEspiritus.jpeg" alt="Portada de La casa de los espíritus"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>La casa de los espíritus</h2>
+                            <p>Isabel Allende</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/sombraViento.png" alt="Portada de La sombra del viento"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>La sombra del viento</h2>
+                            <p>Carlos Ruiz Zafón</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="col-start-1 row-start-1 opacity-0 invisible transition-opacity duration-500 group-has-[#s3:checked]:opacity-100 group-has-[#s3:checked]:visible lg:grid lg:grid-cols-6 lg:gap-x-1">
+                        <div class="flex items-center col-span-3 gap-4">
+                            <img src="../img/pedroParamo_223x304.png" alt="Portada de Pedro Páramo"
+                                class="h-[11.5rem] w-[7.5rem] shrink-0 object-cover shadow-xl lg:h-[22rem] lg:w-[15rem]">
+                            <div class="flex flex-col gap-2 lg:gap-4">
+                                <p class="text-xs uppercase text-cobre lg:text-base lg:normal-case">Novela · Realismo
+                                    mágico</p>
+                                <h2 class="text-xl lg:text-4xl text-chocolateProfundo">Pedro Páramo</h2>
+                                <p class="text-sm text-chocolate lg:text-base">Juan Rulfo</p>
+                                <p class="text-sm text-chocolate lg:text-base">Un hijo viaja a Comala en busca de su
+                                    padre y encuentra un pueblo de voces</p>
+                                <a href="" class="text-base text-cobre lg:text-xl">Ver libro <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/casaEspiritus.jpeg" alt="Portada de La casa de los espíritus"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>La casa de los espíritus</h2>
+                            <p>Isabel Allende</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/sombraViento.png" alt="Portada de La sombra del viento"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>La sombra del viento</h2>
+                            <p>Carlos Ruiz Zafón</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/rayuela.png" alt="Portada de Rayuela"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>Rayuela</h2>
+                            <p>Julio Cortázar</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="col-start-1 row-start-1 opacity-0 invisible transition-opacity duration-500 group-has-[#s4:checked]:opacity-100 group-has-[#s4:checked]:visible lg:grid lg:grid-cols-6 lg:gap-x-1">
+                        <div class="flex items-center col-span-3 gap-4">
+                            <img src="../img/casaEspiritus.jpeg" alt="Portada de La casa de los espíritus"
+                                class="h-[11.5rem] w-[7.5rem] shrink-0 object-cover shadow-xl lg:h-[22rem] lg:w-[15rem]">
+                            <div class="flex flex-col gap-2 lg:gap-4">
+                                <p class="text-xs uppercase text-cobre lg:text-base lg:normal-case">Novela · Saga
+                                    familiar</p>
+                                <h2 class="text-xl lg:text-4xl text-chocolateProfundo">La casa de los espíritus</h2>
+                                <p class="text-sm text-chocolate lg:text-base">Isabel Allende</p>
+                                <p class="text-sm text-chocolate lg:text-base">Tres generaciones de mujeres, un amor y
+                                    una casa que guarda sus secretos</p>
+                                <a href="" class="text-base text-cobre lg:text-xl">Ver libro <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/sombraViento.png" alt="Portada de La sombra del viento"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>La sombra del viento</h2>
+                            <p>Carlos Ruiz Zafón</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/rayuela.png" alt="Portada de Rayuela"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>Rayuela</h2>
+                            <p>Julio Cortázar</p>
+                        </div>
+                        <div class="hidden lg:flex lg:flex-col lg:items-center">
+                            <img src="../img/pedroParamo_223x304.png" alt="Portada de Pedro Páramo"
+                                class="h-[19rem] w-[15rem] object-cover">
+                            <h2>Pedro Páramo</h2>
+                            <p>Juan Rulfo</p>
+                        </div>
                     </div>
                 </div>
-                <div class="hidden lg:flex lg:flex-col lg:items-center">
-                    <img src="../img/rayuela.png" alt="">
-                    <h2>Rayuela</h2>
-                    <p>Julio Cortázar</p>
-                </div>
-                <div class="hidden lg:flex lg:flex-col lg:items-centerr">
-                    <img src="../img/pedroParamo_223x304.png" alt="" class="h-[19rem]">
-                    <h2>Pedro Páramo</h2>
-                    <p>Julio Rulfo</p>
-                </div>
-                <div class="hidden lg:flex lg:flex-col lg:items-center">
-                    <img src="../img/casaEspiritus.jpeg" alt="" class="h-[19rem]">
-                    <h2>La casa de los espíritus</h2>
-                    <p>Isabel Allende</p>
+
+                <div class="flex items-center justify-between gap-6 lg:absolute lg:top-13 lg:right-13">
+
+                    <div class="flex items-center gap-3 text-sm text-chocolate">
+                        <div class="flex items-center gap-1.5">
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-chocolate/40 transition-all group-has-[#s1:checked]:w-5 group-has-[#s1:checked]:bg-cobre"></span>
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-chocolate/40 transition-all group-has-[#s2:checked]:w-5 group-has-[#s2:checked]:bg-cobre"></span>
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-chocolate/40 transition-all group-has-[#s3:checked]:w-5 group-has-[#s3:checked]:bg-cobre"></span>
+                            <span
+                                class="h-1.5 w-1.5 rounded-full bg-chocolate/40 transition-all group-has-[#s4:checked]:w-5 group-has-[#s4:checked]:bg-cobre"></span>
+                        </div>
+                        <div class="grid">
+                            <span class="col-start-1 row-start-1 invisible group-has-[#s1:checked]:visible">01 /
+                                04</span>
+                            <span class="col-start-1 row-start-1 invisible group-has-[#s2:checked]:visible">02 /
+                                04</span>
+                            <span class="col-start-1 row-start-1 invisible group-has-[#s3:checked]:visible">03 /
+                                04</span>
+                            <span class="col-start-1 row-start-1 invisible group-has-[#s4:checked]:visible">04 /
+                                04</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 text-xl">
+                        <div class="grid">
+                            <label for="s4" aria-label="Anterior"
+                                class="col-start-1 row-start-1 invisible group-has-[#s1:checked]:visible border border-chocolateProfundo rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-left-long"></i></label>
+                            <label for="s1" aria-label="Anterior"
+                                class="col-start-1 row-start-1 invisible group-has-[#s2:checked]:visible border border-chocolateProfundo rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-left-long"></i></label>
+                            <label for="s2" aria-label="Anterior"
+                                class="col-start-1 row-start-1 invisible group-has-[#s3:checked]:visible border border-chocolateProfundo rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-left-long"></i></label>
+                            <label for="s3" aria-label="Anterior"
+                                class="col-start-1 row-start-1 invisible group-has-[#s4:checked]:visible border border-chocolateProfundo rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-left-long"></i></label>
+                        </div>
+
+                        <div class="grid">
+                            <label for="s2" aria-label="Siguiente"
+                                class="col-start-1 row-start-1 invisible group-has-[#s1:checked]:visible border border-chocolateProfundo bg-duraznoFont rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-right-long"></i></label>
+                            <label for="s3" aria-label="Siguiente"
+                                class="col-start-1 row-start-1 invisible group-has-[#s2:checked]:visible border border-chocolateProfundo bg-duraznoFont rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-right-long"></i></label>
+                            <label for="s4" aria-label="Siguiente"
+                                class="col-start-1 row-start-1 invisible group-has-[#s3:checked]:visible border border-chocolateProfundo bg-duraznoFont rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-right-long"></i></label>
+                            <label for="s1" aria-label="Siguiente"
+                                class="col-start-1 row-start-1 invisible group-has-[#s4:checked]:visible border border-chocolateProfundo bg-duraznoFont rounded-full size-10 flex items-center justify-center cursor-pointer hover:bg-duraznoFont"><i
+                                    class="fa-solid fa-arrow-right-long"></i></label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,78 +465,100 @@
     <section class="border-b border-chocolate flex flex-col gap-10 pt-15">
         <div class="flex justify-between items-center">
             <div class="text-durazno flex flex-col gap-5">
-                <h2 class="text-4xl">Los más pedidos</h2>
+                <h2 class="text-xl lg:text-4xl">Los más pedidos</h2>
                 <p>Las lecturas favoritas de la comunidad.</p>
             </div>
             <a href="" class="text-duraznoFont text-lg">Ver todos <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div class="grid grid-cols-2 grid-x-3 lg:grid-cols-6 lg:grid-x-1">
-            <div class="flex flex-col items-center justify-center gap-4">
-                <img src="../img/cienAños.png" alt="">
-                <h2 class="text-xl text-durazno">Cien años de soledad</h2>
-                <div class="flex flex-col items-center">
-                    <p class="text-chocolateClaro">Gabriel García Marquez</p>
+
+        <div class="grid grid-cols-2 gap-6 lg:grid-cols-6 lg:gap-4">
+
+            <!-- Libro 1 -->
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
+                <img src="../img/cienAños.png" alt="Cien años de soledad" class="object-contain">
+                <h2 class="flex h-12 items-center justify-center text-center text-xl text-durazno">
+                    Cien años de soledad
+                </h2>
+                <div class="flex flex-col items-center text-center">
+                    <p class="text-chocolateClaro">Gabriel García Márquez</p>
                     <p class="text-cobre">Realismo Mágico</p>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
-                <img src="../img/principito.png" alt="">
-                <h2 class="text-xl text-durazno">El principito</h2>
-                <div class="flex flex-col items-center">
+            <!-- Libro 2 -->
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
+                <img src="../img/principito.png" alt="El principito" class="object-contain">
+                <h2 class="flex h-12 items-center justify-center text-center text-xl text-durazno">
+                    El principito
+                </h2>
+                <div class="flex flex-col items-center text-center">
                     <p class="text-chocolateClaro">Antoine de Saint-Exupéry</p>
                     <p class="text-cobre">Clásicos</p>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
-                <img src="../img/1984.png" alt="">
-                <h2 class="text-xl text-durazno">1984</h2>
-                <div class="flex flex-col items-center">
+            <!-- Libro 3 -->
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
+                <img src="../img/1984.png" alt="1984" class="object-contain">
+                <h2 class="flex h-12 items-center justify-center text-center text-xl text-durazno">
+                    1984
+                </h2>
+                <div class="flex flex-col items-center text-center">
                     <p class="text-chocolateClaro">George Orwell</p>
                     <p class="text-cobre">Distopía</p>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
-                <img src="../img/orgulloPrejuicio.png" alt="">
-                <h2 class="text-durazno">Orgullo y prejuicio</h2>
-                <div class="flex flex-col items-center">
+            <!-- Libro 4 -->
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
+                <img src="../img/orgulloPrejuicio.png" alt="Orgullo y prejuicio" class="object-contain">
+                <h2 class="flex h-12 items-center justify-center text-center text-xl text-durazno">
+                    Orgullo y prejuicio
+                </h2>
+                <div class="flex flex-col items-center text-center">
                     <p class="text-chocolateClaro">Jane Austen</p>
                     <p class="text-cobre">Clásicos</p>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
-                <img src="../img/donQuijote.png" alt="">
-                <h2 class="text-xl text-durazno">Don Quijote de la Mancha</h2>
-                <div class="flex flex-col items-center">
+            <!-- Libro 5 -->
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
+                <img src="../img/donQuijote.png" alt="Don Quijote de la Mancha" class="object-contain">
+                <h2 class="flex h-12 items-center justify-center text-center text-xl text-durazno">
+                    Don Quijote de la Mancha
+                </h2>
+                <div class="flex flex-col items-center text-center">
                     <p class="text-chocolateClaro">Miguel de Cervantes</p>
                     <p class="text-cobre">Clásicos</p>
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
-                <img src="../img/rayuela.png" alt="">
-                <h2 class="text-xl text-durazno">Rayuela</h2>
-                <div class="flex flex-col items-center">
+            <!-- Libro 6 -->
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
+                <img src="../img/rayuela.png" alt="Rayuela" class="object-contain">
+                <h2 class="flex h-12 items-center justify-center text-center text-xl text-durazno">
+                    Rayuela
+                </h2>
+                <div class="flex flex-col items-center text-center">
                     <p class="text-chocolateClaro">Julio Cortázar</p>
                     <p class="text-cobre">Narrativa Latinoamericana</p>
                 </div>
             </div>
+
         </div>
+
     </section>
 
     <section class="flex flex-col gap-10 pt-15">
         <div class="flex justify-between items-center">
             <div class="text-durazno flex flex-col gap-5">
-                <h2 class="text-4xl">Lo más nuevo</h2>
+                <h2 class="text-xl lg:text-4xl">Lo más nuevo</h2>
                 <p>Recién incorporados a nuestra biblioteca.</p>
             </div>
             <a href="" class="text-duraznoFont text-lg">Ver todos <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div class="grid grid-cols-2 grid-x-3 lg:grid-cols-6 lg:grid-x-1">
-            <div class="flex flex-col items-center justify-center gap-4">
+        <div class="grid grid-cols-2 gap-6 lg:grid-cols-6 lg:gap-4">
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
                 <img src="../img/laVegetariana.png" alt="">
                 <h2 class="text-xl text-durazno">La Vegetariana</h2>
                 <div class="flex flex-col items-center">
@@ -229,7 +567,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
                 <img src="../img/infinitoJunco.png" alt="">
                 <h2 class="text-xl text-durazno">El infinito en un junco</h2>
                 <div class="flex flex-col items-center">
@@ -238,7 +576,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
                 <img src="../img/nada.png" alt="">
                 <h2 class="text-xl text-durazno">Nada</h2>
                 <div class="flex flex-col items-center">
@@ -247,7 +585,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
                 <img src="../img/losAbismos.png" alt="">
                 <h2 class="text-durazno">Los abismos</h2>
                 <div class="flex flex-col items-center">
@@ -256,7 +594,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
                 <img src="../img/cuartoPropio.png" alt="">
                 <h2 class="text-xl text-durazno">Un cuarto propio</h2>
                 <div class="flex flex-col items-center">
@@ -265,7 +603,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-4">
+            <div class="flex h-full w-full flex-col items-center justify-start gap-3">
                 <img src="../img/noVolverteVer.png" alt="">
                 <h2 class="text-xl text-durazno">La ridícula idea de no volver a verte</h2>
                 <div class="flex flex-col items-center">
@@ -279,7 +617,7 @@
     <footer class="flex justify-between text-duraznoFont border-t border-chocolate py-10 mt-10 items-center w-[100%]">
         <p class="text-lg lg:text-2xl">biblioWeb</p>
         <p class="sm:text-sm">&copy; 2026 biblioWeb</p>
-        <div class="sm:text-sm flex flex-col lg:flex gap-10">
+        <div class="sm:text-sm flex flex-col lg:flex lg:flex-row gap-10">
             <p class="">Política de privacidad</p>
             <p>Centro de ayuda</p>
         </div>
