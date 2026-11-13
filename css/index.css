@@ -105,11 +105,6 @@
     --color-crema-oscuro: #F6EBDD;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
 body.modo-oscuro,
 body.modo-oscuro .navbar {
     background-color: var(--color-marron-oscuro);
@@ -158,9 +153,6 @@ hr {
     opacity: 1;
 }
 
-.btn{
-        background-color: var(--color-naranja-oscuro);
-}
 
 /* ===== MODO CLARO: página de inicio ===== */ 
 
