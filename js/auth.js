@@ -1,35 +1,49 @@
-const loginForm = document.getElementById("login-form");
-const errorMessage = document.getElementById("error-message");
+var loginForm = document.getElementById("login-form");
+var errorMessage = document.getElementById("error-message");
 
-//Credenciales correctas
-const correo = "admin@biblioweb.test";
-const contrasena = "Admin123";
+// Credenciales correctas
+var correo = "admin@biblioweb.test";
+var contrasena = "Admin123";
 
 
-loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+if (loginForm) {
 
-    email = document.getElementById('email');
-    password = document.getElementById('password');
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    if (email.value === "" || password.value === "") {
-        errorMessage.style.color = "red";
-        errorMessage.textContent = "Por favor, completa todos los campos.";
-        return;
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+
+        if (email.value === "" || password.value === "") {
+            errorMessage.style.color = "red";
+            errorMessage.textContent = "Por favor, completa todos los campos.";
+            return;
+        }
+
+        if (email.value === correo && password.value === contrasena) {
+            errorMessage.style.color = "green";
+            errorMessage.textContent = "Inicio de sesión exitoso!";
+
+            localStorage.setItem("auth", "true");
+
+            setTimeout(function () {
+                window.location.href = "../pages/admin.html";
+            }, 1000);
+
+        } else {
+            errorMessage.style.color = "red";
+            errorMessage.textContent = "Correo o contraseña incorrectos.";
+        }
+    });
+
+} else {
+    var autenticacion = localStorage.getItem("auth");
+
+    if (autenticacion != "true") {
+        window.location.href = "login.html";
     }
-
-    if (email.value === correo && password.value === contrasena) {
-        errorMessage.style.color = "green";
-        errorMessage.textContent = "Inicio de sesión exitoso!";
-        setTimeout(function () {
-            window.location.href = "../pages/admin.html";
-        }, 1000);
-        sessionStorage.setItem("auth", "true")
-    }else {
-        errorMessage.style.color = "red";
-        errorMessage.textContent = "Correo o contraseña incorrectos.";
-    }
-
-    loginForm.reset();
-})
-
+}
+function salir() {
+    localStorage.removeItem("auth");
+    window.location.href = "../pages/login.html";
+}

@@ -91,3 +91,115 @@
     font-size: 14px;
     margin-bottom: 6px;
 }
+
+
+:root {
+    --color-naranja-claro: #FFBA72;
+    --color-crema: #FFF7EC;
+    --color-beige: #D9BBA5;
+    --color-marron-oscuro: #3A1D12;
+    --color-marron: #6B3A1F;
+    --color-marron-profundo: #4A2A1B;
+    --color-marron-claro: #725341;
+    --color-naranja-oscuro: #BB4D00;
+    --color-crema-oscuro: #F6EBDD;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body.modo-oscuro,
+body.modo-oscuro .navbar {
+    background-color: var(--color-marron-oscuro);
+}
+
+body.modo-claro,
+body.modo-claro .navbar {
+    background-color: var(--color-crema);
+}
+
+
+body.modo-oscuro a,
+body.modo-oscuro label,
+body.modo-oscuro hr {
+    color: var(--color-naranja-claro);
+}
+
+body.modo-claro h1,
+body.modo-claro h2,
+body.modo-claro h3,
+body.modo-claro p,
+body.modo-claro a,
+body.modo-claro hr {
+    color: var(--color-naranja-oscuro);
+}
+
+body.modo-claro .btn {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-oscuro .btn{
+    color: white;
+}
+
+#emailHelp {
+    color: var(--color-naranja-claro);
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    width: 98%;
+    margin: 0 auto;
+    opacity: 1;
+}
+
+.btn{
+        background-color: var(--color-naranja-oscuro);
+}
+
+/* ===== MODO CLARO: página de inicio ===== */ 
+
+
+ /* Portada */
+ body.modo-claro .portada h1,
+ body.modo-claro .portada p {
+    color: white
+ }
+
+body.modo-claro .portada .etiqueta {
+    color: var(--color-naranja-claro);
+}
+
+/* Tarjetas café */
+body.modo-claro .tarjeta {
+    background-color: var(--color-crema);
+    border-color: var(--color-beige);
+}
+
+body.modo-claro .tarjeta h3 {
+    color: var(--color-marron-oscuro);
+
+}
+
+body.modo-claro .tarjeta p {
+    color: var(--color-marron);
+}
+
+
+body.modo-claro .tarjeta i {
+    color: var(--color-naranja-oscuro);
+}
+
+/* Horarios y ubicación */
+body.modo-claro .info h4 {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro .info p {
+    color: var(--color-marron);
+}

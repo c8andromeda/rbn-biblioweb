@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/catalogo.css">
     <style type="text/tailwindcss">
         @theme {
         --color-duraznoFont: #FBBA72;
@@ -21,7 +22,7 @@
     <script src="https://kit.fontawesome.com/8bd5e3e88c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-chocolateProfundo lg:px-15">
+<body class="bg-chocolateProfundo lg:px-15 modo-oscuro">
 
     <header class="border-b border-chocolate">
         <nav class="bg-chocolateProfundo text-duraznoFont">
@@ -39,11 +40,15 @@
                     <li><a href="../pages/login.html">Administrador</a></li>
                 </ul>
 
-                <div class="hidden lg:flex items-center relative">
+                <div class="hidden lg:flex items-center relative gap-3">
                     <input type="text" class="bg-durazno rounded-lg h-[2.5rem] pr-10 w-64 pl-4"
                         placeholder="Título, autor o tema">
                     <i
-                        class="fa-solid fa-magnifying-glass bg-cobre text-2xl p-1 rounded-lg absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                        class="fa-solid fa-magnifying-glass bg-cobre text-2xl p-1 rounded-lg absolute right-12 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                     <button id="btnTema" type="button" class="rounded border-1 border-gray-300 hover:bg-gray-300 cursor-pointer p-1 flex items-center justify-center"
+                            aria-label="Cambiar tema">
+                            <i class="fa-solid fa-moon"></i>
+                    </button>
                 </div>
 
                 <details class="relative lg:hidden">
@@ -59,13 +64,6 @@
                             <li><a href="../pages/catalogo.html">Catálogo</a></li>
                             <li><a href="../pages/login.html">Administrador</a></li>
                         </ul>
-                        <!-- 
-                        <div class="relative mt-5">
-                            <input type="text" class="bg-durazno rounded-lg h-10 w-full pr-10 pl-3"
-                                placeholder="Título, autor o tema">
-                            <i
-                                class="fa-solid fa-magnifying-glass bg-cobre text-xl p-1 rounded-lg absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-                        </div> -->
 
                         <hr class="border-chocolate my-5">
 
@@ -623,6 +621,7 @@
         </div>
     </footer>
 
+    <script src="../js/tema.js"> </script>
 </body>
 
 </html>

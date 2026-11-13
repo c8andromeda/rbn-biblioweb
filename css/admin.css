@@ -25,11 +25,12 @@ html, body {
 }
 
 .icon {
-    height: 30px;
-    border: 1px solid #FBBA72;
-    margin-right: 10px;
-    border-radius: 10px;
-    width: 3%;
+    height: 10px;
+    width: 10%;
+}
+
+.btn-sm{
+    margin-left: 10px;
 }
 
 .icon img {
@@ -119,6 +120,12 @@ select.form-select:focus {
     border-color: #4A2A1B;
     color: #FFF7EC;
 }
+.cerrar{
+    font-size: 10px;
+    height: 30px;
+    width: auto;
+}
+
 
 .btn-info {
     background-color: #2B150E;
@@ -207,3 +214,70 @@ footer p {
     color: #BB4D00;
     text-decoration: underline;
 }
+
+
+:root {
+    --color-naranja-claro: #FFBA72;
+    --color-crema: #FFF7EC;
+    --color-beige: #D9BBA5;
+    --color-marron-oscuro: #3A1D12;
+    --color-marron: #6B3A1F;
+    --color-marron-profundo: #4A2A1B;
+    --color-marron-claro: #725341;
+    --color-naranja-oscuro: #BB4D00;
+    --color-crema-oscuro: #F6EBDD;
+}
+
+body.modo-oscuro,
+body.modo-oscuro .navbar {
+    background-color: var(--color-marron-oscuro);
+}
+
+body.modo-claro,
+body.modo-claro .navbar {
+    background-color: var(--color-crema);
+}
+
+body.modo-claro h3,
+body.modo-claro p,
+body.modo-claro a,
+body.modo-claro hr {
+    color: var(--color-naranja-oscuro);
+}
+
+body.modo-claro .navi,
+body.modo-claro footer {
+    background-color: var(--color-crema-oscuro);
+    color: var(--color-marron-oscuro);
+    border-color: var(--color-beige);
+}
+
+body.modo-claro #btnTema {
+    color: var(--color-marron-oscuro);
+    border-color: var(--color-marron);
+}
+
+body.modo-claro .info {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro .info h2 {
+    color: var(--color-marron-oscuro) !important;
+}
+
+body.modo-claro form.form-control {
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(58, 29, 18, 0.08);
+}
+
+body.modo-claro .lb {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro .add-books,
+body.modo-claro .lb-2,
+body.modo-claro footer p {
+    color: var(--color-marron-claro);
+}
+
+
