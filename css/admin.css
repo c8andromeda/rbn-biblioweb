@@ -26,10 +26,11 @@ html, body {
 
 .icon {
     height: 30px;
-    border: 1px solid #FBBA72;
-    margin-right: 10px;
-    border-radius: 10px;
-    width: 3%;
+    width: 10%;
+}
+
+.btn-sm{
+    margin-left: 10px;
 }
 
 .icon img {
@@ -207,3 +208,36 @@ footer p {
     color: #BB4D00;
     text-decoration: underline;
 }
+
+
+:root {
+    --color-naranja-claro: #FFBA72;
+    --color-crema: #FFF7EC;
+    --color-beige: #D9BBA5;
+    --color-marron-oscuro: #3A1D12;
+    --color-marron: #6B3A1F;
+    --color-marron-profundo: #4A2A1B;
+    --color-marron-claro: #725341;
+    --color-naranja-oscuro: #BB4D00;
+    --color-crema-oscuro: #F6EBDD;
+}
+
+body.modo-oscuro,
+body.modo-oscuro .navbar {
+    background-color: var(--color-marron-oscuro);
+}
+
+body.modo-claro,
+body.modo-claro .navbar {
+    background-color: var(--color-crema);
+}
+
+body.modo-claro h3,
+body.modo-claro p,
+body.modo-claro a,
+body.modo-claro hr {
+    color: var(--color-naranja-oscuro);
+}
+
+
+
