@@ -22,7 +22,7 @@ loginForm.addEventListener("submit", function (event) {
         errorMessage.style.color = "green";
         errorMessage.textContent = "Inicio de sesión exitoso!";
         setTimeout(function () {
-            window.location.href = "../admin.html";
+            window.location.href = "../pages/admin.html";
         }, 1000);
         sessionStorage.setItem("auth", "true")
     }else {
