@@ -45,5 +45,5 @@ if (loginForm) {
 }
 function salir() {
     localStorage.removeItem("auth");
-    window.location.href = "../index.html";
+    window.location.href = "../pages/login.html";
 }

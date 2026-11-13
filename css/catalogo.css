@@ -10,16 +10,12 @@
     --color-crema-oscuro: #F6EBDD;
 }
 
-body.modo-claro {
+body.modo-claro, body.modo-claro nav {
     background-color: var(--color-crema);
 }
 
 body.modo-claro main .group.relative {
     background-color: var(--color-crema-oscuro);
-}
-
-body.modo-claro nav {
-    background-color: var(--color-marron-profundo);
 }
 
 body.modo-claro h1,
