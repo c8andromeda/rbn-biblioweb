@@ -274,5 +274,7 @@ body.modo-claro footer p {
     color: var(--color-marron-claro);
 }
 
-
+.cerrar{
+    font-weight: bold;
+}
 
