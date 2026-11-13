@@ -239,5 +239,40 @@ body.modo-claro hr {
     color: var(--color-naranja-oscuro);
 }
 
+body.modo-claro .navi,
+body.modo-claro footer {
+    background-color: var(--color-crema-oscuro);
+    color: var(--color-marron-oscuro);
+    border-color: var(--color-beige);
+}
+
+body.modo-claro #btnTema {
+    color: var(--color-marron-oscuro);
+    border-color: var(--color-marron);
+}
+
+body.modo-claro .info {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro .info h2 {
+    color: var(--color-marron-oscuro) !important;
+}
+
+body.modo-claro form.form-control {
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(58, 29, 18, 0.08);
+}
+
+body.modo-claro .lb {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro .add-books,
+body.modo-claro .lb-2,
+body.modo-claro footer p {
+    color: var(--color-marron-claro);
+}
+
 
 

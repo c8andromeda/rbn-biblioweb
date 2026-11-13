@@ -1,0 +1,74 @@
+:root {
+    --color-naranja-claro: #FFBA72;
+    --color-crema: #FFF7EC;
+    --color-beige: #D9BBA5;
+    --color-marron-oscuro: #3A1D12;
+    --color-marron: #6B3A1F;
+    --color-marron-profundo: #4A2A1B;
+    --color-marron-claro: #725341;
+    --color-naranja-oscuro: #BB4D00;
+    --color-crema-oscuro: #F6EBDD;
+}
+
+body.modo-claro {
+    background-color: var(--color-crema);
+}
+
+body.modo-claro main .group.relative {
+    background-color: var(--color-crema-oscuro);
+}
+
+body.modo-claro nav {
+    background-color: var(--color-marron-profundo);
+}
+
+body.modo-claro h1,
+body.modo-claro h2,
+body.modo-claro h3,
+body.modo-claro p,
+body.modo-claro a,
+body.modo-claro hr {
+    color: var(--color-naranja-oscuro);
+}
+
+body.modo-claro .btn {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-oscuro .btn{
+    color: white;
+}
+
+body.modo-claro .form-control{
+    background-color: var(--color-crema-oscuro);
+    border: 1px solid var(--color-naranja-oscuro);
+}
+
+body.modo-oscuro input::placeholder{
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro input::placeholder{
+    color: var(--color-marron-oscuro);
+}
+
+
+#emailHelp {
+    color: var(--color-naranja-claro);
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    width: 98%;
+    margin: 0 auto;
+    opacity: 1;
+}
+
+.btnBoton{
+        background-color: var(--color-naranja-oscuro);
+}
+
+

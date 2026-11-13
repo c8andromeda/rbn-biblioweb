@@ -162,4 +162,44 @@ hr {
         background-color: var(--color-naranja-oscuro);
 }
 
+/* ===== MODO CLARO: página de inicio ===== */ 
 
+
+ /* Portada */
+ body.modo-claro .portada h1,
+ body.modo-claro .portada p {
+    color: white
+ }
+
+body.modo-claro .portada .etiqueta {
+    color: var(--color-naranja-claro);
+}
+
+/* Tarjetas café */
+body.modo-claro .tarjeta {
+    background-color: var(--color-crema);
+    border-color: var(--color-beige);
+}
+
+body.modo-claro .tarjeta h3 {
+    color: var(--color-marron-oscuro);
+
+}
+
+body.modo-claro .tarjeta p {
+    color: var(--color-marron);
+}
+
+
+body.modo-claro .tarjeta i {
+    color: var(--color-naranja-oscuro);
+}
+
+/* Horarios y ubicación */
+body.modo-claro .info h4 {
+    color: var(--color-marron-oscuro);
+}
+
+body.modo-claro .info p {
+    color: var(--color-marron);
+}

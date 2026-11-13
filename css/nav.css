@@ -61,7 +61,6 @@ h1, h2, h3 {
 }
 
 
-
    .texto-barra {
     color: #D9BBA5;
     font-size: 13px;
@@ -71,4 +70,33 @@ h1, h2, h3 {
 .barra .nav-link {
     padding-left: 12px;
     padding-right: 12px;
+}
+
+/* ===== MODO CLARO: barra y pie ===== */
+
+body.modo-claro {
+    color: var(--color-marron-oscuro);
+}
+
+/* Barra */
+body.modo-claro .logo {
+    color: var(--color-naranja-oscuro);
+}
+
+body.modo-claro .barra .nav-link {
+    color: var(--color-marron);
+}
+
+body.modo-claro .barra .nav-link.active {
+    color: var(--color-naranja-claro);
+}
+
+body.modo-claro .texto-barra {
+    color: var(--color-marron);
+}
+
+/* Pie de página */
+body.modo-claro .pie,
+body.modo-claro .pie a {
+    color: var(--color-marron);
 }
